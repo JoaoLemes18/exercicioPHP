@@ -1,20 +1,27 @@
+
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Formulário de Exemplo</title>
+</head>
+
 <body>
+    <h1>Meu Formulario</h1>
+    <form action="pagina_destino.php" method="POST">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" required>
 
-<h1>Formulário</h1>
+        <label for="email">E-mail:</label>
+        <input type="email" name="email" id="email" required>
 
-<form action="/action_page.php">
-  <label for="fname">Seu Nome:</label><br>
-  <input type="text" id="fname" name="fname" value=""><br>
-  <label for="lname">Ultimo nome:</label><br>
-  <input type="text" id="lname" name="lname" value=""><br><br>
-  <input type="submit" value="Submit">
-</form> 
-
-<?php
-
-?>
-
+        <input type="submit" value="Enviar">
+    </form>
+    <?php
+    //lógica para enivar os dados
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $nome = $_POST["nome"];
+        $email = $_POST["email"];
+    } 
+    ?>
 </body>
-</html>
+<!--index.php –->

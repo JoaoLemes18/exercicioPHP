@@ -19,16 +19,18 @@
 <?php
 //conexão banco 
 $servername = "localhost";
+$database = "joao";
 $nome = "nome";
 $email = "email";
+$password = "";
 
-$conn = new mysqli($nome, $email);
-
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+try{
+    $conn = new mysqli($servername,$nome, $email,$database,$password);
+$conn->query "INSERT INTO tabela (nome,idade) VALUES ('$nome','$idade')"
 }
-echo "Connected successfully";
+
 
 ?>
+
 </body>
 </html>
